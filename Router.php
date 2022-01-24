@@ -16,10 +16,10 @@ class Router
 
     public function get()
     {
-        $route = $_SERVER['REQUEST_URI'];
+        $route = $_SERVER['REDIRECT_URL'];
 
         if (array_key_exists($route, $this->routes)) {
-           include $this->routes[$route];
+            include $this->routes[$route];
         } else {
             var_dump(404); die;
         }
